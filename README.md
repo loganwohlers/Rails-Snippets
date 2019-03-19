@@ -8,16 +8,25 @@ VS Code-- Code->pref->User Snippets->new global file-> paste rails_snippets abov
 current snippets
 
 erb
+
 erb/squid (<%= %>)
+
 erb/icecream (<% %>)
+
 erb/index
+
 erb/new-form
+
 erb/edit-form
 
 rails
+
 r/controller-scaffold
+
 r/controller-template
+
 r/link_to
+
 r/collection_select
 
 
