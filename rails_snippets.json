@@ -1,0 +1,148 @@
+	"erb tags squid": {
+    "scope": "ruby,html",
+		"prefix": "erb/squid",
+		"body": [
+		  "<%= $1 %>"
+		],
+		"description": "erb printed expression"
+	  },
+
+	"erb tags ice": {
+		"scope": "ruby,html",
+		"prefix": "erb/icecream",
+		"body": [
+		  "<% $1 %>"
+		],
+		"description": "erb-non-print-expression"
+		},
+		
+	"erbindex": {
+		"scope": "ruby,html",
+		"prefix": "erb/index",
+		"body": [
+		  "<% @${1:example}.each do |item| %>",
+		  "    <%= link_to ${1:example}, ${1:example}_path(item)%> <br>",
+		  "<%end%>"
+		],
+		"description": "erb_each_loop_for_index"
+		},
+		
+	"erb_new_form": {
+			"scope": "ruby,html",
+			"prefix": "erb/new-form",
+			"body": [
+				"<%= form_for(@${1:example}) do |f| %>",
+				"  <%= f.label :${2:another} %>",
+				"  <%= f.text_field :${2:another} %>",
+				"  <%= f.label :${3:athird} %>",
+				"  <%= f.text_field :${3:athird} %>",
+				"  <%= f.submit \"Create ${1:example}\"%>",
+				"<% end %>"
+			],
+			"description": "erb/new_form"
+		},
+
+	"erb_edit_form": {
+			"scope": "ruby,html",
+			"prefix": "erb/edit-form",
+			"body": [
+				"<%= form_for(@${1:example}) do |f| %>",
+				"  <%= f.label :${2:example} %>",
+				"  <%= f.text_field :${2:example} %>",
+				"  <%= f.label :${3:example} %>",
+				"  <%= f.text_field :${3:example} %>",
+				"  <%= f.submit \"Update ${1:example}\"%>",
+				"<% end %>"
+			],
+			"description": "erb_edit_form"
+		},
+
+	"controller": {
+			"scope": "ruby,html",
+			"prefix": "r/controller-scaffold",
+			"body": [
+				"before_action :set_{1:example}, only: [:show, :edit, :update]",
+				"def index",
+				"        @${1:example}s=${2:class_name}.all",
+				"    end",
+				"",
+				"    def new",
+				"        @${1:example}=${2:class_name}.new",
+				"    end",
+				"",
+				"    def create",
+				"        @${1:example}=${2:class_name}.create(${1:example}_params)",
+				"        redirect_to ${1:example}_path(@${1:example})",
+				"    end",
+				"",
+				"    def show",
+				"    end",
+				"",
+				"    def edit",
+				"    end",
+				"    ",
+				"    def update",
+				"        @${1:example}.update(${1:example}_params)",
+				"        redirect_to ${1:example}_path(@${1:example})",
+				"    end",
+				"",
+				"    private",
+				"",
+				"    def ${1:example}_params",
+				"        params.require(:${1:example}).permit(${enter_params})",
+				"    end"
+			],
+			"description": "controller"
+		},
+
+	"controller_template": {
+			"scope": "ruby,html",
+			"prefix": "r/controller-template",
+			"body": [
+				"before_action :set_{1:example, only: [:show, :edit, :update]",
+				"    def index    ",
+				"    end",
+				"",
+				"    def new   ",
+				"    end",
+				"",
+				"    def create",
+				"    end",
+				"",
+				"    def show",
+				"    end",
+				"",
+				"    def edit",
+				"    end",
+				"    ",
+				"    def update",
+				"    end",
+				"",
+				"    private",
+				"",
+				"    def ${1:example}_params",
+				"        params.require(:${1:example}).permit()",
+				"    end"
+			],
+			"description": "controller_template"
+		},
+
+	"link_to": {
+			"scope": "ruby,html",
+			"prefix": "r/link_to",
+			"body": [
+				"<%= link_to @${1:example}, ${2:example}_path($var)%>"
+			],
+			"description": "link_to"
+		},
+
+	"collection_select": {
+			"scope": "ruby,html",
+			"prefix": "r/collection_select",
+			"body": [
+				"<%= f.collection_select :${class_lower}_id, ${class}.all, :id, :${drop_down_display}%>",
+			],
+			"description": "collection_select"
+		}
+
+
